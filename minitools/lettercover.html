@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>字母加空格，引号换直角</title>
+  <meta name="Author" content="南极神">
+  <meta name="Keywords" content="迷你工具">
+  <meta name="Description" content="字母加空格，引号换直角">
+  <meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" type="image/x-icon" href="https://i.loli.net/2019/12/05/15AjyfMO6pdPcVS.png">
+<style>
+a,a:visited,a:active{text-decoration:none;color:#666}
+body{font-family:Helvetica,'微软雅黑','Microsoft YaHei',Arial,sans-serif;background:#000 url(http://wx2.sinaimg.cn/large/6f0785d9ly1g221mm3dijj21z4140ae7.jpg)no-repeat;background-size:cover;color:#666}
+main{margin:3em auto;padding:1.5em;width:60%;background:#fff;border-radius:10px;box-shadow:1px 3px 20px #000}
+section{margin:0 1.1em;}
+form{text-align:center}
+input{margin-top:16px;background:#1b9ad1;outline:none;border:none;border-radius:20px;width:10em;height:43px;color:#fff;font-weight:bold;box-shadow:0 0 15px #ccc}
+input:active{text-shadow:1px 2px 25px #000}
+textarea{width:95%;outline:none} textarea::-webkit-input-placeholder{position:relative;top:15px}
+@media screen and (max-device-width:1000px){main{margin-top:1em;width:85%}section{margin:.3em}}
+</style>
+<script>
+function Addblank(inText){
+    outText = inText.value.replace(/([\u4E00-\u9FA3])([A-Za-z0-9\(\[\{@#])/g, '$1 $2');
+    outText = outText.replace(/([A-Za-z0-9\.,!@#%?\)\]\}])([\u4E00-\u9FA3])/g, '$1 $2');
+    outText = outText.replace(/([〔〕（）。，！？《》—“”「」]) +/g, '$1');
+    outText = outText.replace(/ +([〔〕（）。，！？《》—“”「」])/g, '$1');
+    outText = outText.replace(/ +/g, ' ');
+    outText = outText.replace(/“/g, "「");
+    outText = outText.replace(/”/g, "」");
+    outText = outText.replace(/‘/g, "『");
+    outText = outText.replace(/’/g, "』");
+    inText.value = outText;
+}
+</script>
+</head><body>
+<main>
+ <section>
+  <a href="../index.html">Home</a>
+  <h1>字母加空格，引号换直角</h1>
+  <p>
+  在“中英文混排中”，给中文与英文之间加一个空格，用直角代替引号。这样看上去即美观又工整，观看和阅读体验都更好，值得推荐。你可以在下面输入：<em> “测试”文字abc文字 </em>，然后点击底部的 Convert 
+  </p>
+ </section>
+  <form>
+   <textarea name="inText" placeholder="  > Enter or Paste text here" rows="26"></textarea>
+   <input onclick="Addblank(this.form.inText);" type="button" name="btnConvert" value="TO CONVERT">
+  </form>        
+
+</main>
+</body></html>
