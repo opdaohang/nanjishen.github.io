@@ -15,6 +15,7 @@ else if (getvalue == 'soft') {window.open("http://www.carrotchou.blog/?s=" + s ,
 else if (getvalue == 'wallhaven') {window.open("https://alpha.wallhaven.cc/search?q=" + s ,"_self");}
 else if (getvalue == 'linuxcmd') {window.open("http://man.linuxde.net/" + s ,"_self");}
 else if (getvalue == 'outline') {window.open("https://outline.com/" + s ,"_self");}
+else if (getvalue == 'ip') {window.open("https://www.maitube.com/ip/?ip=" + s ,"_self");}
 }
 
 Searchbox.focus();
